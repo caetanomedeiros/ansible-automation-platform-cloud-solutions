@@ -40,7 +40,7 @@
       amazon.aws.ec2_instance:
         name: "{{ instance_name }}"
         key_name: "{{ key_name }}"
-        vpc_subnet_id: "{{ subnet.subnet.id }}"
+        # vpc_subnet_id: "{{ subnet.subnet.id }}"
         instance_type: "{{ instance_type }}"
         security_group: "{{ security_group.group_id  }}"
         count: 1
@@ -49,3 +49,5 @@
         network:
           assign_public_ip: true
         image_id: "{{ ami }}"
+        tags:
+          Environment: "Testing"
